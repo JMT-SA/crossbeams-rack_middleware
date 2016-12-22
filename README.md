@@ -1,15 +1,13 @@
-# Crossbeams::RackMidware
+# Crossbeams::RackMiddleware
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crossbeams/rack_midware`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Rack Middleware for use by the Crossbeams framework.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'crossbeams-rack_midware'
+gem 'crossbeams-rack_middleware'
 ```
 
 And then execute:
@@ -18,11 +16,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install crossbeams-rack_midware
+    $ gem install crossbeams-rack_middleware
 
 ## Usage
 
-TODO: Write usage instructions here
+### Banner
+
+Use this to provide an ERB partial that can be used by mounted apps.
+
+In `config.ru` use the middleware and provide the path to the erb template that will be used :
+
+```ruby
+use Crossbeams::RackMiddleware::Banner, template: 'lib/banner_template.erb'
+```
 
 ## Development
 
@@ -32,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/crossbeams-rack_midware.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/crossbeams-rack_middleware.
 
 
 ## License
