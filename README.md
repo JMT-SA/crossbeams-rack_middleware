@@ -30,6 +30,13 @@ In `config.ru` use the middleware and provide the path to the erb template that 
 use Crossbeams::RackMiddleware::Banner, template: 'lib/banner_template.erb'
 ```
 
+Write the contents of the template to be passed through ERB (`lib/banner_template.erb` in the example above):
+
+```html
+<h1><a href="/">Home</a></h1>
+<p>Time is <%= Time.now %></p>
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
