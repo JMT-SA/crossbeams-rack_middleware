@@ -4,7 +4,7 @@ module Crossbeams
       def initialize(app, options = {})
         @app      = app
         @appname  = options[:appname] || 'the app'
-        @template = ERB.new(File.read(File.expand_path(options[:template]))).result if options[:template] && File.exist?(File.expand_path(options[:template]))
+        @template = Erubis::Eruby.new(File.read(File.expand_path(options[:template]))).result if options[:template] && File.exist?(File.expand_path(options[:template]))
       end
 
       def call(env)
